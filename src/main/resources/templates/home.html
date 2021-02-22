@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<!--include-style layouts-->
+<!--Hierarchical-style layouts 써보기-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.80.0">
+  <title>Spring boot + JPA</title>
+
+  <!-- Custom styles for this template -->
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="container">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/members/new">회원 등록</a>
+          <a class="nav-link" href="/members">회원 목록</a>
+          <a class="nav-link" href="/items/new">상품 등록</a>
+          <a class="nav-link" href="/items">상품 목록</a>
+          <a class="nav-link" href="/order">상품 주문</a>
+          <a class="nav-link" href="/orders">주문 내역</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1>Stringboot + JPA</h1>
+      <p class="lead">쇼핑몰 제작을 위한 회원가입부터 주문내역까지 볼 수 있도록 하였습니다.</p>
+    </main>
+  <footer class="mt-auto text-white-50">
+    <p><a href="https://github.com/rhkdhl23?tab=repositories" class="text-white">Project</a>, by <a href="https://jsoso.tistory.com/" class="text-white">@j.soso</a>.</p>
+  </footer>
+</div>
+</div>
+</body>
+</html>

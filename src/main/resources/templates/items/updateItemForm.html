@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/members/new">회원 등록</a>
+          <a class="nav-link" href="/members">회원 목록</a>
+          <a class="nav-link" href="/items/new">상품 등록</a>
+          <a class="nav-link" href="/items">상품 목록</a>
+          <a class="nav-link" href="/order">상품 주문</a>
+          <a class="nav-link" href="/orders">주문 내역</a>
+        </nav>
+      </div>
+    </header>
+    <form th:object="${form}" method="post">
+    <!-- id -->
+    <input type="hidden" th:field="*{id}" />
+    <div class="form-group">
+      <label th:for="name">상품명</label>
+      <input type="text" th:field="*{name}" class="form-control"
+             placeholder="이름을 입력하세요" />
+    </div>
+    <div class="form-group">
+      <label th:for="price">가격</label>
+      <input type="number" th:field="*{price}" class="form-control"
+             placeholder="가격을 입력하세요" />
+    </div>
+    <div class="form-group">
+      <label th:for="stockQuantity">수량</label>
+      <input type="number" th:field="*{stockQuantity}" class="form-control" placeholder="수량을 입력하세요" />
+    </div>
+    <div class="form-group">
+      <label th:for="author">저자</label>
+      <input type="text" th:field="*{author}" class="form-control"
+             placeholder="저자를 입력하세요" />
+    </div>
+    <div class="form-group">
+      <label th:for="isbn">ISBN</label>
+      <input type="text" th:field="*{isbn}" class="form-control"
+             placeholder="ISBN을 입력하세요" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    <footer class="mt-auto text-white-50">
+      <p><a href="https://github.com/rhkdhl23?tab=repositories" class="text-white">Project</a>, by <a
+        href="https://jsoso.tistory.com/" class="text-white">@j.soso</a>.</p>
+    </footer></div> <!-- /container -->
+</div>
+</body>
+</html>

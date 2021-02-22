@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+<!--상품 목록-->
+<div class="container">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/members/new">회원 등록</a>
+          <a class="nav-link" href="/members">회원 목록</a>
+          <a class="nav-link" href="/items/new">상품 등록</a>
+          <a class="nav-link" href="/items">상품 목록</a>
+          <a class="nav-link" href="/order">상품 주문</a>
+          <a class="nav-link" href="/orders">주문 내역</a>
+        </nav>
+      </div>
+    </header>
+    <div class="bb">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>상품명</th>
+          <th>가격</th>
+          <th>재고수량</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${items}">
+          <td th:text="${item.id}"></td>
+          <td th:text="${item.name}"></td>
+          <td th:text="${item.price}"></td>
+          <td th:text="${item.stockQuantity}"></td>
+          <td>
+            <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer class="mt-auto text-white-50">
+    <p><a href="https://github.com/rhkdhl23?tab=repositories" class="text-white">Project</a>, by <a
+      href="https://jsoso.tistory.com/" class="text-white">@j.soso</a>.</p>
+  </footer>
+</div>
+</body>
+
+</html>

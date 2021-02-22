@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'jpabook'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+//의존관계
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
+  implementation 'org.springframework.boot:spring-boot-configuration-processor'
+
+  //적어주고 gradle import 무조건 해주기! 안하면 음 없는거 그냥 없어유
+  //그냥 gradle화면 열어서 끌어댕기고 새로고침하면 되드라구여~
+  implementation 'org.springframework.boot:spring-boot-devtools' //<- 굉장히 좋아유 꼭 넣기!
+
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+
+	annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//JUnit4 추가
+  testImplementation("org.junit.vintage:junit-vintage-engine") {
+    exclude group: "org.hamcrest", module: "hamcrest-core"
+  }
+
+}
+
+test {
+	useJUnitPlatform()
+}
